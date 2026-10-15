@@ -911,11 +911,14 @@ footer.site-foot .links { display: flex; gap: 6px 16px; flex-wrap: wrap; }
         </article>
 
         <article class="plate" id="rs-burn">
-          <div class="img"><button class="zoom" type="button" data-full="assets/rs_burn.jpg" data-title="Burn-scar band combination with min-max stretch"><img src="assets/rs_burn.jpg" alt="Landsat burn-scar composite: healthy vegetation green, burned areas dark and magenta" loading="lazy"></button></div>
+          <div class="img duo">
+            <button class="zoom" type="button" data-full="assets/rs_burn_2014.jpg" data-title="Glacier National Park, August 2014: SWIR2–NIR–blue"><img src="assets/rs_burn_2014.jpg" alt="Landsat 8 SWIR2-NIR-blue composite of east Glacier National Park in August 2014, before the fires" loading="lazy"><span class="tag mono">Aug 2014</span></button>
+            <button class="zoom" type="button" data-full="assets/rs_burn_2015.jpg" data-title="Glacier National Park, August 2015: SWIR2–NIR–blue"><img src="assets/rs_burn_2015.jpg" alt="Landsat 8 SWIR2-NIR-blue composite of east Glacier National Park in August 2015, with burned ground standing out from green vegetation" loading="lazy"><span class="tag mono">Aug 2015</span></button>
+          </div>
           <div class="txt">
-            <span class="sensor mono">Optical · Landsat · Lab 4</span>
-            <h3>Burn-Scar Rendering</h3>
-            <p>SWIR2–NIR–blue combination with a min-max stretch and a sharpening convolution to pull burned ground apart from healthy vegetation.</p>
+            <span class="sensor mono">Optical · Landsat 8 · Lab 4</span>
+            <h3>Burn Scar, Glacier National Park</h3>
+            <p>SWIR2–NIR–blue burn-scar combination of the east side of Glacier National Park, Montana, a year apart. In 2015 the burned ground stands out from healthy green vegetation.</p>
           </div>
         </article>
 
@@ -983,7 +986,7 @@ footer.site-foot .links { display: flex; gap: 6px 16px; flex-wrap: wrap; }
         </article>
 
         <article class="plate" id="rs-drone">
-          <div class="img"><button class="zoom" type="button" data-full="assets/rs_drone.jpg" data-title="Differenced elevation model of a retention basin"><img src="assets/rs_drone.jpg" alt="Differenced elevation model of a retention basin, deeper areas in darker orange" loading="lazy"></button></div>
+          <div class="img"><button class="zoom" type="button" data-full="assets/rs_drone.jpg" data-title="Retention basin: drone orthomosaic with excavation depth (0–2.46 m)"><img src="assets/rs_drone.jpg" alt="Drone orthomosaic of a stormwater retention basin with excavation depth shaded from pale yellow to dark brown" loading="lazy"></button></div>
           <div class="txt">
             <span class="sensor mono">Elevation · drone photogrammetry · Lab 7</span>
             <h3>Drone Volume Survey, Retention Basin</h3>
@@ -1401,6 +1404,7 @@ window.initWorkMap = () => {
     ['Band Combinations, Aral Sea', 45.0, 59.6, 'rs', 'rs-aral', 'Landsat 9 · GEOG 361'],
     ['Supervised Classification, Louisville', 38.25, -85.76, 'rs', 'rs-louisville', 'Kentucky · GEOG 361'],
     ['Change Detection, Lake Poyang', 29.1, 116.3, 'rs', 'rs-poyang', 'Jiangxi, China · GEOG 361'],
+    ['Burn Scar, Glacier National Park', 48.6, -113.5, 'rs', 'rs-burn', 'Montana · GEOG 361'],
     ['Deep-Learning Damage Mapping, Woolsey Fire', 34.12, -118.78, 'rs', 'rs-woolsey', 'Los Angeles County · GEOG 361'],
     ['Brightness Temperature, Ross Island', -77.5, 167.0, 'rs', 'rs-thermal', 'Antarctica · GEOG 361'],
     ['Lidar Terrain, Hut Point Peninsula', -77.85, 166.65, 'rs', 'rs-lidar', 'Antarctica · GEOG 361'],
