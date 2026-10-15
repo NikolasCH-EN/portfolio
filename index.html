@@ -450,21 +450,26 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
 }
 @media (max-width: 560px) { .resume dl.skills { grid-template-columns: 1fr; gap: 2px; } .resume dl.skills dd { margin-bottom: 8px; } .resume p, .resume li { text-align: left; } }
 
-/* Lightbox: counter, title, arrows, caption */
-#viewer { grid-template-rows: auto minmax(0, 1fr) auto; background: #0B100F; }
-#viewer .v-bar { display: flex; align-items: center; gap: 12px; color: #E2E8E1; padding: 4px 4px 10px; }
+/* Lightbox: a centred window over the dimmed page, with counter, title, arrows and caption */
+#viewer { grid-template-rows: none; place-items: center; background: rgba(8, 12, 11, .72); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); }
+#viewer .v-panel { width: fit-content; min-width: min(420px, 100%); max-width: min(1100px, calc(100vw - 150px)); background: #0B100F; border: 1px solid #2B3734; border-radius: 8px; padding: 8px 14px 14px; box-shadow: 0 24px 64px rgba(0, 0, 0, .55); }
+#viewer .v-bar { display: flex; align-items: center; gap: 12px; color: #E2E8E1; padding: 2px 0 10px; contain: inline-size; }
 #viewer #viewer-title { flex: 1; min-width: 0; font-weight: 600; overflow-wrap: anywhere; }
 #viewer #viewer-count { color: #93A39C; flex: none; font-variant-numeric: tabular-nums; }
-#viewer .v-stage { position: relative; min-height: 0; display: grid; place-items: center; overflow: auto; touch-action: pan-y; }
-#viewer .v-stage img { max-width: 100%; max-height: 100%; object-fit: contain; background: #fff; }
-#viewer .v-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; padding: 0; border-radius: 50%; display: grid; place-items: center; font-size: 30px; line-height: 1; background: rgba(15, 23, 22, .62); border: 1px solid #93A39C; color: #E2E8E1; }
+#viewer .v-stage { display: grid; place-items: center; touch-action: pan-y; }
+#viewer .v-stage img { display: block; width: auto; height: auto; max-width: 100%; max-height: calc(100vh - 190px); max-height: calc(100dvh - 190px); object-fit: contain; background: #fff; border-radius: 2px; }
+#viewer .v-nav { position: fixed; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; padding: 0; border-radius: 50%; display: grid; place-items: center; font-size: 30px; line-height: 1; background: rgba(15, 23, 22, .8); border: 1px solid #93A39C; color: #E2E8E1; }
 #viewer .v-nav[hidden] { display: none; }
-#viewer #viewer-prev { left: 10px; }
-#viewer #viewer-next { right: 10px; }
+#viewer #viewer-prev { left: 20px; }
+#viewer #viewer-next { right: 20px; }
 #viewer .v-nav:hover, #viewer .v-nav:focus-visible { border-color: #72B2EA; color: #72B2EA; }
-#viewer .v-cap { margin: 10px 4px 0; color: #C9D2CC; font-size: .9rem; line-height: 1.5; max-width: 90ch; }
+#viewer .v-cap { margin: 10px 2px 0; color: #C9D2CC; font-size: .9rem; line-height: 1.5; contain: inline-size; }
 #viewer .v-cap:empty { display: none; }
-@media (max-width: 560px) { #viewer .v-nav { display: none; } }  /* phones: swipe instead of arrows over the map */
+@media (max-width: 560px) {  /* phones: nearly full width, swipe instead of arrows */
+  #viewer .v-panel { max-width: 100%; padding: 6px 10px 10px; }
+  #viewer .v-nav { display: none; }
+  #viewer .v-stage img { max-height: calc(100dvh - 200px); }
+}
 
 /* ---- Single-file additions ---- */
 .view[hidden] { display: none !important; }
@@ -1233,13 +1238,13 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
 </footer>
 
 <div id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewer-title" hidden>
-  <div class="v-bar"><span class="mono" id="viewer-count"></span><span id="viewer-title"></span><button type="button" id="viewer-close">Close</button></div>
-  <div class="v-stage">
-    <button type="button" class="v-nav" id="viewer-prev" aria-label="Previous image">‹</button>
-    <img id="viewer-img" alt="">
-    <button type="button" class="v-nav" id="viewer-next" aria-label="Next image">›</button>
+  <button type="button" class="v-nav" id="viewer-prev" aria-label="Previous image">‹</button>
+  <div class="v-panel">
+    <div class="v-bar"><span class="mono" id="viewer-count"></span><span id="viewer-title"></span><button type="button" id="viewer-close">Close</button></div>
+    <div class="v-stage"><img id="viewer-img" alt=""></div>
+    <p class="v-cap" id="viewer-cap"></p>
   </div>
-  <p class="v-cap" id="viewer-cap"></p>
+  <button type="button" class="v-nav" id="viewer-next" aria-label="Next image">›</button>
 </div><!--/viewer-->
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
