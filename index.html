@@ -503,6 +503,10 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
   .pitem-body > .sheet figure, .pitem-body > .sheet.featured.flip figure { border-right: 0; border-bottom: 1px solid var(--line); }
 }
 
+
+/* Home: degree, goal and core tools */
+.hero .meta { color: var(--muted); font-size: .8rem; line-height: 1.7; margin: 0; }
+.hero .meta span { white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -533,10 +537,12 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
     </div>
     <h1>Bingqian Chen</h1>
     <p class="lede">GIS and remote sensing student at Texas A&amp;M. I turn satellite imagery, field data and open records into <em>maps and analysis people can act on</em>: hurricane exposure, natural hazards, land change and GeoAI.</p>
+    <p class="meta mono"><span>B.S. GIST, Dec 2026</span> · <span>M.S. Geography, May 2028</span><br><span>Seeking a GIS Analyst /</span> <span>Geospatial Data Intern role</span><br><span>ArcGIS Pro · Python · R · SQL ·</span> <span>ArcGIS Online and Field Maps</span></p>
     <div class="cta">
       <a class="btn primary" href="#projects">View projects</a>
       <a class="btn" href="#project-1">Featured project</a>
       <a class="btn" href="#resume">Resume</a>
+      <a class="btn" href="mailto:bingqc@tamu.edu">Email me</a>
     </div>
     </div>
     <figure class="stack">
@@ -600,7 +606,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
       <div class="about">
         <div>
           <p>I'm an accelerated B.S./M.S. student at Texas A&amp;M University, finishing a B.S. in Geographic Information Science and Technology and continuing into an M.S. in Geography.</p>
-          <p>My work runs from field collection (GNSS, Field Maps) and drone photogrammetry through analysis in ArcGIS Pro, Google Earth Engine, Python and R, to finished cartography and web apps. I care about methods I can defend: testing my own results, and saying plainly what a number does and does not measure.</p>
+          <p>My work runs from field collection (GNSS, Field Maps) and drone photogrammetry through analysis in ArcGIS Pro, Python and R, to finished cartography and web apps. I care about methods I can defend: testing my own results, and saying plainly what a number does and does not measure.</p>
           <div class="research">
             <h2 class="sub">Research interest</h2>
             <p><strong>Algorithmic bias in urban greening metrics.</strong> My graduate research proposal asks whether street-view computer vision models (YOLO, DeepLabV3+) used to compute the Green View Index misread "visual noise" such as green billboards or paint as vegetation more often in disadvantaged neighborhoods, comparing Houston and College Station.</p>
@@ -662,8 +668,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
             <li><span class="sym line"></span>Flask, Leaflet, pytest</li>
             <li><span class="sym line"></span>R (sf, ggplot2)</li>
             <li><span class="sym line"></span>SQL</li>
-            <li><span class="sym line"></span>Earth Engine JavaScript</li>
-          </ul>
+                </ul>
         </div>
         <div>
           <h3>Field &amp; Survey</h3>
@@ -754,7 +759,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
               <li>Galveston and Harris counties carry the highest composite risk, where dense population meets storm-surge zones</li>
               <li>Rural high-risk areas lack nearby shelters and hospitals; Galveston and Houston rely heavily on I-45 to evacuate</li>
             </ul>
-            <p class="role"><b>My role</b>Study-area extraction, data cleaning, symbology for risk and storm tracks, and the interactive ArcGIS Online web app.</p>
+            <p class="role"><b>My role</b>Study-area extraction, the ArcPy ingest script, data cleaning, the kernel density and hot spot analysis, symbology for risk and storm tracks, and the ArcGIS Instant Apps web app.</p>
             <div class="chips"><span class="chip">ArcGIS Pro</span><span class="chip">ArcGIS Online</span><span class="chip">NOAA</span><span class="chip">FEMA NRI</span><span class="chip">HIFLD</span></div>
           </div>
         </article>
@@ -865,7 +870,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
               <p>Where do low household income and low educational attainment coincide? A bivariate map for a general audience, first published as an ArcGIS StoryMap.</p>
               <ul class="points">
                 <li>Joined ACS 5-year median household income and educational attainment to county geometries with SQL in ArcGIS Pro</li>
-                <li>High–high clusters on both coasts; low–low across the Southeast and parts of the Midwest, such as Oklahoma, Arkansas and Mississippi</li>
+                <li>High–high counties concentrate on both coasts; low–low across the Southeast and parts of the Midwest, such as Oklahoma, Arkansas and Mississippi</li>
                 <li>Revised the original map after peer review by three reviewers</li>
                 <li>The original StoryMap's account is no longer active, so I made a new version in R from public ACS tables, with a simpler 3×3 tertile design (3,109 counties)</li>
               </ul>
@@ -910,7 +915,8 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
           <li><strong>Choosing Map Projections</strong><span>Used Tissot's indicatrix to pick equal-area, UTM and azimuthal equidistant projections for three mapping scenarios. GEOG 390.</span></li>
           <li><strong>Brazos County Home-Site Suitability</strong><span>Weighted overlay of flood risk, road access, forest distance and campus distance, with a weight sensitivity test. GEOG 475.</span></li>
           <li><strong>Interpolation Accuracy Assessment</strong><span>IDW, spline and kriging compared by RMSE; regularized spline rebuilt the DEM best (14.09). GEOG 475.</span></li>
-          <li><strong>GNSS Processing and Survey Plats</strong><span>Static GNSS post-processed in OPUS, a topographic surface and pad design in Civil 3D from provided RTK points, and a horizontal well location plat. GEOG 352.</span></li>
+          <li><strong>GNSS Processing and Survey Plats</strong><span>Configured a Trimble RTK unit and compared RTK points with static GNSS post-processed in OPUS; built a topographic surface and pad design in Civil 3D from an RTK survey, and a horizontal well location plat. GEOG 352.</span></li>
+          <li><strong>UAS Mission Planning</strong><span>Designed a DroneDeploy mission plan at 0.4 in/px and processed drone imagery into orthomosaics and 3D models in DroneDeploy and Pix4D. GEOG 352.</span></li>
           <li><strong>Independence Creek Drainage Basin</strong><span>Basin divides traced with a partner on a USGS 1:24,000 quad, plus field-trip observations from the Brazos terrace to Old Baylor. GEOG 450.</span></li>
           <li><strong>Stream Discharge Autocorrelation</strong><span>Mann-Kendall trend, ACF and cross-correlation of USGS gauges, and Moran's I in R. GEOG 312.</span></li>
         </ul>
@@ -979,7 +985,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
           <div class="txt">
             <span class="sensor mono">Optical · Landsat · Lab 5</span>
             <h3>Change Detection, Lake Poyang</h3>
-            <p>Unsupervised classification of two Landsat scenes 30 years apart; comparing the water class of each year maps the lake area lost since 1984 in orange.</p>
+            <p>Unsupervised classification of two Landsat scenes 30 years apart; comparing the water class of each year maps the difference between the two dates in orange. Poyang's area swings with the seasons, so two single dates show change between these scenes, not a measured long-term trend.</p>
             <span class="stat">2,697 → 2,023 km² · −25%</span>
           </div>
         </article>
@@ -1074,7 +1080,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
       <article class="prose">
         <h2>The problem</h2>
         <p>COLE lets a household compare U.S. counties by take-home pay against household costs and climate. It had no way to screen out counties with high natural-hazard exposure.</p>
-        <p>The obvious measure, FEMA's headline Risk rating, is built from dollar losses, so it follows population. Its rank correlation with county population is 0.86, and all 17 Very High counties are among the 10% most populous. A household filtering on it would mostly be told to avoid large cities, not dangerous places.</p>
+        <p>The obvious measure, FEMA's headline Risk rating, is built from total dollar losses, so it follows population: a large county has more to lose even where each home is no more exposed. Its rank correlation with county population is 0.86, and all 17 Very High counties are among the 10% most populous. A household filtering on it would mostly be told to avoid large cities, whether or not homes there are more exposed. A household needs a rate instead: the share of a home's value, or the risk to one resident, lost per year.</p>
 
         <h2>My role</h2>
         <p>COLE is a team project. I designed and built the natural-hazard add-on: the data preparation, the ranking method, the loader checks, the interface and its tests. With no hazard limits set, COLE behaves exactly as before.</p>
@@ -1097,8 +1103,8 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
         </table></div>
         <ul>
           <li><strong>Heat wave uses risk to people</strong>, because buildings are a median 0.01% of a county's expected heat loss.</li>
-          <li><strong>Ranking.</strong> Each rate is ranked among COLE's own counties where that hazard causes some loss, from 0 to 100 with ties sharing the midrank, using exact arithmetic. Classes break at 20, 40, 60 and 80 (Very Low to Very High). Hurricane and coastal flooding rank only the counties they reach.</li>
-          <li><strong>Deliberately not used:</strong> FEMA's headline Risk rating, for its population bias; FEMA's published loss-rate percentiles, which an audit reproduced only by weighting deaths by count instead of dollar value, so St. Louis city scores 4.7 for heat wave on them despite one of the country's highest heat-death rates; and agricultural loss, which matters to farms rather than a household's home.</li>
+          <li><strong>Ranking.</strong> Each rate is ranked among COLE's own counties where that hazard causes some loss, from 0 to 100 with ties sharing the midrank, using exact arithmetic. Classes break at 20, 40, 60 and 80 (Very Low to Very High). The classes are relative: Very Low means lower than most affected counties, not safe. Hurricane and coastal flooding rank only the counties they reach.</li>
+          <li><strong>Deliberately not used:</strong> FEMA's headline Risk rating, for its population bias; FEMA's published loss-rate percentiles, which an audit reproduced only by weighting deaths by count instead of dollar value, so St. Louis city scores 4.7 for heat wave on them although it ranks 99.9 for heat on risk to people; and agricultural loss, which matters to farms rather than a household's home.</li>
           <li><strong>Safeguards.</strong> Every row must match COLE on state, county name and county type, which separates pairs such as Baltimore County and Baltimore city. Missing counties stop data preparation unless they are documented gaps, and downloads are https-only with a pinned fingerprint.</li>
         </ul>
 
@@ -1133,7 +1139,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
         <ul>
           <li>3,135 of COLE's 3,143 counties have hazard data. The other 8 are Connecticut's legacy counties, which NRI v1.20 replaces with planning regions, so they are marked unavailable rather than approximated.</li>
           <li>131 automated tests pass, including a full load through COLE's own repository and the interface in headless Chrome.</li>
-          <li>An independent AI-assisted audit recomputed all 131,670 cells of the hazard table from the raw NRI file with 0 mismatches and ran 443 live queries with 0 mismatches. After the audit, an automated check confirms that all 48,812 plain-language sentences are strictly true.</li>
+          <li>A separate AI-assisted audit recomputed all 131,670 cells of the hazard table from the raw NRI file with 0 mismatches and ran 443 live queries with 0 mismatches. After the audit, an automated check confirms that all 48,812 plain-language sentences match the source data.</li>
         </ul>
 
         <h2>What I would do differently</h2>
