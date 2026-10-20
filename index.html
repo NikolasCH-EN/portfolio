@@ -1098,7 +1098,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
           <thead><tr><th>Measure</th><th>NRI field</th><th>Meaning</th><th>Role</th></tr></thead>
           <tbody>
             <tr><td>Building damage</td><td><code>ALR_VALB</code>, <code>&lt;HAZ&gt;_ALRB</code></td><td>Share of building value lost per year</td><td>Drives every limit except heat wave</td></tr>
-            <tr><td>Risk to people</td><td><code>ALR_VALP</code>, <code>&lt;HAZ&gt;_ALRP</code></td><td>Expected deaths per resident per year, each injury counted as a tenth of a death</td><td>Drives the heat-wave limit; flagged under 5,000 residents</td></tr>
+            <tr><td>Risk to people</td><td><code>ALR_VALP</code>, <code>&lt;HAZ&gt;_ALRP</code></td><td>Expected deaths per resident per year, each injury counted as a tenth of a death (FEMA's population equivalence)</td><td>Drives the heat-wave limit; flagged under 5,000 residents, about the least populous tenth of counties</td></tr>
           </tbody>
         </table></div>
         <ul>
