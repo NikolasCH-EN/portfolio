@@ -507,6 +507,16 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
 /* Home: degree, goal and core tools */
 .hero .meta { color: var(--muted); font-size: .8rem; line-height: 1.7; margin: 0; }
 .hero .meta span { white-space: nowrap; }
+
+/* Skills key: filled symbol = shown in work on this site; hollow dashed = used, no public project yet */
+.sec-head .key { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--muted); font-size: .72rem; }
+.sec-head .key span { display: inline-flex; align-items: center; gap: 8px; }
+.sym.open { background: transparent; border-style: dashed; }
+.sym.rast.open { background: none; border: 1.5px dashed var(--muted); }
+.sym.line.open { border-top-style: dashed; }
+.sym.lang { width: 8px; height: 8px; margin-inline: 7px; border: 0; background: var(--ink); }
+/* Static map shown until (or unless) the live map loads */
+.webmap > .map-fallback { display: block; width: 100%; height: 100%; object-fit: cover; }
 </style>
 </head>
 <body>
@@ -628,7 +638,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
 
   <section id="skills">
     <div class="wrap">
-      <div class="sec-head"><h2>Skills</h2><span class="mono">Legend</span></div>
+      <div class="sec-head"><h2>Skills</h2><div class="key mono" role="note" aria-label="Legend"><span><i class="sym poly" aria-hidden="true"></i>Shown in work on this site</span><span><i class="sym poly open" aria-hidden="true"></i>Used, no public project yet</span></div></div>
 
       <div class="legend">
         <div>
@@ -637,14 +647,14 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
             <li><span class="sym poly"></span>ArcGIS Pro</li>
             <li><span class="sym poly"></span>ArcGIS Online, StoryMaps, Instant Apps</li>
             <li><span class="sym poly"></span>ArcGIS Field Maps</li>
-            <li><span class="sym poly"></span>QGIS</li>
+            <li><span class="sym poly open"></span>QGIS</li>
             <li><span class="sym poly"></span>Cartographic design</li>
           </ul>
         </div>
         <div>
           <h3>Remote Sensing &amp; GeoAI</h3>
           <ul>
-            <li><span class="sym rast"></span>Google Earth Engine</li>
+            <li><span class="sym rast open"></span>Google Earth Engine</li>
             <li><span class="sym rast"></span>Landsat, high-resolution aerial, SAR, thermal</li>
             <li><span class="sym rast"></span>Supervised / unsupervised classification</li>
             <li><span class="sym rast"></span>Deep learning (ArcGIS, DeepLabV3+)</li>
@@ -664,11 +674,12 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
         <div>
           <h3>Programming &amp; Data</h3>
           <ul>
-            <li><span class="sym line"></span>Python (ArcPy, geopandas, rasterio, pandas)</li>
+            <li><span class="sym line"></span>Python (ArcPy)</li>
+            <li><span class="sym line open"></span>geopandas, rasterio, pandas</li>
             <li><span class="sym line"></span>Flask, Leaflet, pytest</li>
             <li><span class="sym line"></span>R (sf, ggplot2)</li>
             <li><span class="sym line"></span>SQL</li>
-            <li><span class="sym line"></span>Earth Engine JavaScript</li>
+            <li><span class="sym line open"></span>Earth Engine JavaScript</li>
             </ul>
         </div>
         <div>
@@ -727,7 +738,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
   <section id="where">
     <div class="wrap">
       <div class="sec-head"><h2>Where the work is</h2><span class="mono">Approximate study areas</span></div>
-      <div id="workmap" class="webmap" role="region" aria-label="Interactive map of project study areas"></div>
+      <div id="workmap" class="webmap" role="region" aria-label="Interactive map of project study areas"><img class="map-fallback" src="assets/workmap_static-960.webp" srcset="assets/workmap_static-960.webp 960w, assets/workmap_static-1600.webp 1600w" sizes="(max-width: 1180px) 92vw, 1100px" alt="Static world map of approximate study areas: projects in Texas and Chicago, remote sensing labs across the United States, Panama, the Aral Sea, Lake Poyang and Antarctica, and map layouts in the western United States and Austin" loading="lazy"></div>
       <div class="map-legend"><span><i style="background:var(--water)"></i>Project</span><span><i style="background:var(--contour)"></i>Remote sensing lab</span><span><i style="background:var(--veg)"></i>Map layout</span><span>Nationwide projects and labs without a fixed site are not pinned.</span></div>
     </div>
   </section>
@@ -1512,6 +1523,7 @@ window.initWorkMap = () => {
     ['Flood Impact and Police Staffing, Austin', 30.27, -97.74, 'map', 'g-austin-flood', 'Austin · GEOG 390 · two layouts']
   ];
   const el = document.getElementById('workmap');
+  el.replaceChildren();   // drop the static preview once the live map can load
   const map = L.map(el, { scrollWheelZoom: false, zoomSnap: 0, zoomDelta: .5, maxBounds: [[-85, -180], [85, 180]], maxBoundsViscosity: 1 });
   // Smallest zoom at which one copy of the world spans the whole box, so no grey shows beside the tiles
   const fitZoom = () => { const z = Math.log2(Math.max(el.clientWidth, el.clientHeight, 256) / 256); map.setMinZoom(z); return z; };
