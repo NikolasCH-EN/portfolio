@@ -517,6 +517,9 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
 .sym.lang { width: 8px; height: 8px; margin-inline: 7px; border: 0; background: var(--ink); }
 /* Static map shown until (or unless) the live map loads */
 .webmap > .map-fallback { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* Skills: four groups, matching the resume */
+@media (min-width: 901px) { .legend { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 </style>
 </head>
 <body>
@@ -547,7 +550,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
     </div>
     <h1>Bingqian Chen</h1>
     <p class="lede">GIS and remote sensing student at Texas A&amp;M. I turn satellite imagery, field data and open records into <em>maps and analysis people can act on</em>: hurricane exposure, natural hazards, land change and GeoAI.</p>
-    <p class="meta mono"><span>B.S. GIST, Dec 2026</span> · <span>M.S. Geography, May 2028</span><br><span>Seeking a GIS Analyst /</span> <span>Geospatial Data Intern role</span><br><span>ArcGIS Pro · Python · R · SQL ·</span> <span>ArcGIS Online and Field Maps</span></p>
+    <p class="meta mono"><span>B.S. GIST, Dec 2026</span> · <span>M.S. Geography, May 2028</span><br><span>Seeking a GIS Analyst /</span> <span>Geospatial Data Intern role</span><br><span>ArcGIS Pro · Python (ArcPy, pandas) ·</span> <span>SQL · Google Earth Engine</span></p>
     <div class="cta">
       <a class="btn primary" href="#projects">View projects</a>
       <a class="btn" href="#project-1">Featured project</a>
@@ -587,7 +590,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
                 <li>An AI-assisted audit recomputed 131,670 values with zero mismatches</li>
               </ul>
               <div class="btn-row"><a class="btn primary" href="#project-1">Read the full project</a><a class="btn" href="#projects">All projects</a></div>
-              <p class="role"><b>Team</b>Brandon S. (app development), Andrea F. (testing), Khayman P. (geographic data), Margaret W. (green-space filter), Mitch Z. (age filter) and me (the natural-hazard add-on).</p>
+              <p class="role"><b>Team</b>Brandon S. (app development), Andrea F. (testing), Khayman P. (geographic data), Margaret W. (green-space filter), Mitch Z. (age filter) and me (the natural-hazard add-on, merged into the live app).</p>
               <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Leaflet</span><span class="chip">pytest</span><span class="chip">FEMA NRI</span></div>
             </div>
           </article>
@@ -628,7 +631,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
           <dt>Program</dt><dd>Accelerated B.S./M.S., Texas A&amp;M</dd>
           <dt>B.S.</dt><dd>Geographic Information Science &amp; Technology, Dec 2026</dd>
           <dt>M.S.</dt><dd>Geography, May 2028</dd>
-          <dt>Research</dt><dd>City Analytics &amp; Informatics Research Group</dd>
+          <dt>Research</dt><dd>City Analytics &amp; Informatics Research Group · park visitation data from foot-traffic records</dd>
           <dt>Seeking</dt><dd>GIS Analyst / Geospatial Data Intern</dd>
           <dt>Languages</dt><dd>Mandarin, Cantonese, English</dd>
         </dl>
@@ -643,53 +646,34 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
 
       <div class="legend">
         <div>
-          <h3>GIS &amp; Mapping</h3>
+          <h3>GIS &amp; Remote Sensing</h3>
           <ul>
             <li><span class="sym poly"></span>ArcGIS Pro</li>
-            <li><span class="sym poly"></span>ArcGIS Online, StoryMaps, Instant Apps</li>
+            <li><span class="sym poly"></span>ArcGIS Online</li>
             <li><span class="sym poly"></span>ArcGIS Field Maps</li>
-            <li><span class="sym poly open"></span>QGIS</li>
-            <li><span class="sym poly"></span>Cartographic design</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Remote Sensing &amp; GeoAI</h3>
-          <ul>
-            <li><span class="sym rast open"></span>Google Earth Engine</li>
-            <li><span class="sym rast"></span>Landsat, high-resolution aerial, SAR, thermal</li>
-            <li><span class="sym rast"></span>Supervised / unsupervised classification</li>
-            <li><span class="sym rast"></span>Deep learning (ArcGIS, DeepLabV3+)</li>
-            <li><span class="sym rast"></span>Lidar DEMs, drone photogrammetry</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Spatial Methods</h3>
-          <ul>
-            <li><span class="sym veg"></span>Overlay and suitability modeling</li>
-            <li><span class="sym veg"></span>Kernel density and hot spot analysis</li>
-            <li><span class="sym veg"></span>Interpolation (IDW, spline, kriging)</li>
-            <li><span class="sym veg"></span>Spatial statistics, Moran's I, ANOVA</li>
-            <li><span class="sym veg"></span>Accuracy assessment</li>
+            <li><span class="sym poly open"></span>Google Earth Engine</li>
+            <li><span class="sym poly"></span>Landsat</li>
           </ul>
         </div>
         <div>
           <h3>Programming &amp; Data</h3>
           <ul>
-            <li><span class="sym line"></span>Python (ArcPy)</li>
-            <li><span class="sym line open"></span>geopandas, rasterio, pandas</li>
-            <li><span class="sym line"></span>Flask, Leaflet, pytest</li>
-            <li><span class="sym line"></span>R (sf, ggplot2)</li>
+            <li><span class="sym line"></span>Python (ArcPy, pytest)</li>
+            <li><span class="sym line open"></span>pandas</li>
+            <li><span class="sym line"></span>JavaScript (Leaflet)</li>
+            <li><span class="sym line open"></span>JavaScript (Earth Engine)</li>
+            <li><span class="sym line"></span>Flask</li>
             <li><span class="sym line"></span>SQL</li>
-            <li><span class="sym line open"></span>Earth Engine JavaScript</li>
-            </ul>
+          </ul>
         </div>
         <div>
-          <h3>Field &amp; Survey</h3>
+          <h3>Spatial Methods</h3>
           <ul>
-            <li><span class="sym tri"></span>RTK GNSS field setup (Trimble)</li>
-            <li><span class="sym tri"></span>Static GNSS post-processing in OPUS, datum transformations</li>
-            <li><span class="sym tri"></span>UAS mission planning</li>
-            <li><span class="sym tri"></span>AutoCAD Civil 3D</li>
+            <li><span class="sym veg"></span>Land Cover Classification</li>
+            <li><span class="sym veg"></span>Accuracy Assessment</li>
+            <li><span class="sym veg"></span>Overlay</li>
+            <li><span class="sym veg"></span>KDE / Hot Spot Analysis</li>
+            <li><span class="sym veg"></span>Bivariate Mapping</li>
           </ul>
         </div>
         <div>
@@ -697,7 +681,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
           <ul>
             <li><span class="sym lang"></span>Mandarin (native)</li>
             <li><span class="sym lang"></span>Cantonese (native)</li>
-            <li><span class="sym lang"></span>English (professional)</li>
+            <li><span class="sym lang"></span>English (professional working proficiency)</li>
           </ul>
         </div>
       </div>
@@ -807,7 +791,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
                 <li>An AI-assisted audit recomputed 131,670 values with zero mismatches</li>
               </ul>
               <a class="read-more" href="#project-1">Read the full project →</a>
-              <p class="role"><b>Team</b>Brandon S. (app development), Andrea F. (testing), Khayman P. (geographic data), Margaret W. (green-space filter), Mitch Z. (age filter) and me (the natural-hazard add-on).</p>
+              <p class="role"><b>Team</b>Brandon S. (app development), Andrea F. (testing), Khayman P. (geographic data), Margaret W. (green-space filter), Mitch Z. (age filter) and me (the natural-hazard add-on, merged into the live app).</p>
               <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Leaflet</span><span class="chip">pytest</span><span class="chip">FEMA NRI</span></div>
             </div>
           </article>
@@ -1099,7 +1083,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
         <p>The obvious measure, FEMA's headline Risk rating, is built from total dollar losses, so it follows population: a large county has more to lose even where each home is no more exposed. Its rank correlation with county population is 0.86, and all 17 Very High counties are among the 10% most populous. A household filtering on it would mostly be told to avoid large cities, whether or not homes there are more exposed. A household needs a rate instead: the share of a home's value, or the risk to one resident, lost per year.</p>
 
         <h2>My role</h2>
-        <p>COLE is a team project: Brandon S. led app development, Andrea F. testing, Khayman P. the geographic data, Margaret W. the green-space filter and Mitch Z. the age filter. I designed and built the natural-hazard add-on: the data preparation, the ranking method, the loader checks, the interface and its tests. With no hazard limits set, COLE behaves exactly as before.</p>
+        <p>COLE is a team project: Brandon S. led app development, Andrea F. testing, Khayman P. the geographic data, Margaret W. the green-space filter and Mitch Z. the age filter. I designed and built the natural-hazard add-on: the data preparation, the ranking method, the loader checks, the interface and its tests. With no hazard limits set, COLE behaves exactly as before. The add-on was merged into the team’s live app.</p>
 
         <h2>Data</h2>
         <ul>
@@ -1193,7 +1177,7 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
   <section>
     <div class="wrap resume">
       <h2>Summary</h2>
-      <p>Accelerated B.S./M.S. student at Texas A&amp;M University (B.S. Geographic Information Science &amp; Technology, M.S. Geography). Hands-on experience in hot spot analysis, land cover classification, and web GIS applications, from field data collection to finished cartographic products. Proficient in ArcGIS Pro, Python, and SQL. Seeking a GIS Analyst / Geospatial Data Intern role to leverage spatial modeling, Python automation, and cartographic design.</p>
+      <p>Accelerated B.S./M.S. student in GIS and Geography at Texas A&amp;M University with experience in remote sensing, spatial analysis, and mobility data, from Landsat composites in Google Earth Engine to Python data pipelines and web GIS apps. Proficient in ArcGIS Pro, Python (ArcPy, pandas), and SQL; seeking a GIS Analyst / Geospatial Data Intern role.</p>
 
       <h2>Education</h2>
       <div class="entry">
@@ -1207,44 +1191,44 @@ h2.sub, h3.sub, h4.sub { font-family: var(--font-mono); font-size: .72rem; font-
         <div class="row"><strong>Undergraduate Research Assistant</strong><span class="when">Sept 2025 – Present</span></div>
         <div class="row"><em>City Analytics &amp; Informatics Research Group, Texas A&amp;M University</em><span class="where">College Station, TX</span></div>
         <ul>
-          <li>Collaborate with the research team to visualize complex resilience research results in ArcGIS Pro, translating technical findings into accessible, interactive map-based narratives.</li>
-          <li>Prepare and integrate spatial datasets for mapping, maintaining consistent projections, symbology, and data quality across project outputs.</li>
+          <li>Built a park visitation dataset for Seattle parks in Python from weekly foot-traffic data (Dewey / SafeGraph), spatially joining points of interest to park boundaries for a research partner.</li>
+          <li>Computed visitation volume, monthly and seasonal patterns, and visitor travel distance from home census block groups, allocating visits by origin share and using visitor-weighted means and medians.</li>
         </ul>
       </div>
 
       <h2>Academic projects</h2>
       <div class="entry">
-        <div class="row"><span><strong>Texas Coast Hurricane Risk Analysis</strong> · <em>ArcGIS Pro, ArcGIS Online</em></span><span class="when">Sept 2025 – Nov 2025</span></div>
+        <div class="row"><span><strong>Lagos Urban Expansion Mapping for NGA</strong> · <em>Google Earth Engine, Python</em></span><span class="when">Sept 2026 – Present</span></div>
         <ul>
-          <li>Automated the batch ingestion, reprojection, and clipping of raw NOAA storm tracks and HIFLD infrastructure layers using an ArcPy Python script, standardizing datasets across Texas coastal counties.</li>
-          <li>Applied kernel density and hot spot analysis to historical hurricane tracks to map areas of concentrated hurricane exposure along the Texas coast.</li>
+          <li>Acquired and cloud-screened Landsat imagery for Lagos, Nigeria as imagery lead on a student team serving the National Geospatial-Intelligence Agency (NGA), building dry-season composites in Google Earth Engine.</li>
+          <li>Wrote the team's urban boundary protocol, defining minimum mapping unit and connectivity rules, and delineated Lagos's built-up extent from 2000 to 2024 with a Python post-processing and quality-check workflow.</li>
+          <li>Validated boundaries against DLR World Settlement Footprint and ESA WorldCover, with substantial agreement.</li>
+          <li>Presented the urban boundary method in a talk at Texas GIS Day 2026 and a project brief to the NGA.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="row"><span><strong>Natural-Hazard Add-on for Cost of Living Explorer</strong> · <em>Python, Flask, JavaScript</em></span><span class="when">Sept 2026 – Nov 2026</span></div>
+        <ul>
+          <li>Built a natural-hazard filter for a six-person team's web app that compares U.S. counties on cost of living, ranking FEMA National Risk Index loss rates for 9 hazards across 3,135 counties.</li>
+          <li>Ranked building-loss rates instead of FEMA's headline risk score, which tracks population, and used risk to people for heat waves; added a Flask API endpoint, Leaflet map shading, and plain-language legends.</li>
+          <li>Wrote 131 pytest tests, including a headless-browser run; the add-on was merged into the team's live app.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="row"><span><strong>Texas Coast Hurricane Risk Analysis</strong> · <em>ArcGIS Pro, ArcPy, ArcGIS Online</em></span><span class="when">Sept 2025 – Nov 2025</span></div>
+        <ul>
+          <li>Automated the batch ingestion, reprojection, and clipping of raw NOAA storm tracks and HIFLD infrastructure layers with an ArcPy script, standardizing datasets across Texas coastal counties.</li>
+          <li>Applied kernel density and hot spot analysis to historical hurricane tracks to map exposure along the Texas coast.</li>
           <li>Overlaid exposure results with infrastructure locations using intersect and spatial join tools to identify high-risk evacuation zones and the critical facilities within them.</li>
-          <li>Developed an interactive ArcGIS Online web application with layered hazard and infrastructure data and configured pop-ups, improving access to disaster response information for emergency planning.</li>
-        </ul>
-      </div>
-      <div class="entry">
-        <div class="row"><span><strong>Aggie Park Green Space Analysis</strong> · <em>ArcGIS Field Maps, ArcGIS Online, GNSS</em></span><span class="when">Mar 2025 – May 2025</span></div>
-        <ul>
-          <li>Mapped Aggie Park green spaces and early signs of turf degradation in the field with GNSS receivers and ArcGIS Field Maps as part of a six-person team.</li>
-          <li>Built an ArcGIS Online field map of green-space polygons and degradation points to locate the most affected areas.</li>
-          <li>Compared field results with past and current satellite imagery and with historical (1980–2009) and projected (2010–2039, RCP 8.5) plant hardiness zones.</li>
-          <li>Identified degrading grass fields at risk of soil erosion and recommended irrigation, soil management, and resilient plant species in a research poster.</li>
-        </ul>
-      </div>
-      <div class="entry">
-        <div class="row"><span><strong>U.S. Economic Disparities Analysis</strong> · <em>ArcGIS Pro, ArcGIS StoryMaps</em></span><span class="when">Sept 2024 – Nov 2024</span></div>
-        <ul>
-          <li>Retrieved U.S. Census Bureau ACS 5-year tabular estimates and executed SQL queries to filter and join household income and educational attainment attributes to county geometries in ArcGIS Pro.</li>
-          <li>Designed a bivariate thematic map with a combined classification and color scheme to reveal where low household income and low educational attainment coincide.</li>
-          <li>Developed an interactive ArcGIS StoryMap integrating maps, spatial analysis, and regional case studies to communicate patterns of economic inequality to a general audience.</li>
+          <li>Built an interactive ArcGIS Online web app with configured pop-ups so users can explore where hurricane tracks and evacuation routes meet high-risk areas across 16 coastal counties.</li>
         </ul>
       </div>
 
       <h2>Technical skills</h2>
       <dl class="skills">
-        <dt>GIS &amp; Mapping</dt><dd>ArcGIS Pro, ArcGIS Online, ArcGIS Field Maps, QGIS, Google Earth Engine</dd>
-        <dt>Spatial Methods</dt><dd>Supervised / Unsupervised Land Cover Classification, Overlay Analysis, Kernel Density Estimation, Hot Spot Analysis and Bivariate Mapping</dd>
-        <dt>Programming &amp; Data</dt><dd>Python (ArcPy, geoprocessing automation, pandas), SQL (attribute queries, table joins), R (statistical analysis)</dd>
+        <dt>GIS &amp; Remote Sensing</dt><dd>ArcGIS Pro, ArcGIS Online, ArcGIS Field Maps, Google Earth Engine, Landsat</dd>
+        <dt>Programming &amp; Data</dt><dd>Python (ArcPy, pandas, pytest), JavaScript (Earth Engine, Leaflet), Flask, SQL</dd>
+        <dt>Spatial Methods</dt><dd>Land Cover Classification, Accuracy Assessment, Overlay, KDE / Hot Spot Analysis, Bivariate Mapping</dd>
         <dt>Languages</dt><dd>Mandarin and Cantonese (native), English (professional working proficiency)</dd>
       </dl>
     </div>
